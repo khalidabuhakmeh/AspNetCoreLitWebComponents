@@ -21,12 +21,16 @@
       </Content>
     </ItemGroup>
     
-    <Target Name="Vite" BeforeTargets="Compile">
-        <Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/Client" />
-    </Target>
+<!--    <Target Name="Vite" BeforeTargets="Compile">-->
+<!--        <Exec Command="npm run build" WorkingDirectory="$(ProjectDir)/Client" />-->
+<!--    </Target>-->
 
     <ItemGroup>
       <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Vite.AspNetCore" Version="1.4.0" />
     </ItemGroup>
 
 </Project>

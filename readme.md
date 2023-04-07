@@ -4,15 +4,7 @@ Razor is awesome and the power of server-rendered cannot be underestimated. That
 
 This solution shows how to set up Vite to build Lit components into standalone Web Components that can be reused through out your ASP.NET Core applications.
 
-Important elements in this solution:
-
-- The `Client` folder contains all the client-side assets, including CSS, TypeScript, and images. We let Vite handle those files.
-- `packages.json` contains a build script of `vite build` that generates the build output. We aren't using the dev server (you could if you want to).
-- All build artifacts end up in `wwwroot` for use by our ASP.NET Core application.
-- `Layout.cshtml` has the following `script` element which uses ASP.NET Core's `asp-src-include` which supports wildcard captures. This is because Vite hashes files, but you can disable that if you'd like to.
-```html
-<script asp-src-include="~/assets/index-*.js" type="module"></script>
-```
+- Using the ViteMiddleware package that supports development time and build time. The caveat is your `package.json` has to be at the root, that's fine.
 - The `Index.chstml` file has a `<my-counter></my-counter>` tag. **All Web Components must have a dash in them, it's the law of the internet.**
 - The component is implemented under `Client/src/Counter.ts`.
 

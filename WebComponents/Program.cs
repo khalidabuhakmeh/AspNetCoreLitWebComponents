@@ -1,4 +1,13 @@
+using Vite.AspNetCore.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddViteDevMiddleware();
+}
+// Add the Vite Manifest Service.
+builder.Services.AddViteManifest();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -15,11 +24,13 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapRazorPages();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseViteDevMiddleware();
+}
 
 app.Run();

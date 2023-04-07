@@ -15,7 +15,7 @@ export class Counter extends LitElement {
     @property()
     count = 0;
     @property()
-    display = "Click Me";
+    display;
     increment() {
         this.count++;
         this.display = `Current Count: ${this.count}`;

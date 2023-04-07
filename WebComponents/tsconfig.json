@@ -17,7 +17,13 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": [
+      "vite/client"
+    ]
   },
-  "include": ["vite.config.ts", "src/**/*.ts"]
+  "include": [
+    "vite.config.ts",
+    "Client"
+  ]
 }

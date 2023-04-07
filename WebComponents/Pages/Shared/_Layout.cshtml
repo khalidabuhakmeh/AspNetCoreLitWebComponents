@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Vite.AspNetCore.Abstractions
+@inject IViteManifest Manifest
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -9,7 +12,14 @@
     <link rel="stylesheet" href="~/WebComponents.styles.css" asp-append-version="true"/>
     <script defer src="~/lib/jquery/dist/jquery.min.js"></script>
     <script defer src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script asp-src-include="~/assets/index-*.js" type="module"></script>
+	<environment include="Development">
+		<!-- Vite development server script -->
+		<script type="module" src="~/@@vite/client"></script>
+		<script type="module" src="~/main.ts"></script>
+	</environment>
+	<environment include="Production">
+		<script type="module" src="~/@Manifest["main.ts"]!.File" asp-append-version="true"></script>
+	</environment>
 </head>
 <body>
 <header>

@@ -70,7 +70,7 @@ export default defineConfig(async () => {
       outDir: '../wwwroot',
       assetsDir: '',
       rollupOptions: {
-        input: ['Client/main.ts', "Client/css/site.scss" ],
+        input: ['Client/main.ts', "Client/scss/site.scss" ],
         // remove hashing, but I could add it back in
         output: {
           // Save entry files to the appropriate folder

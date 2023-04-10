@@ -2,4 +2,4 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "jquery";
 import "jquery-validation";
 import "jquery-validation-unobtrusive";
-import "./css/site.scss";
+import "./scss/site.scss";

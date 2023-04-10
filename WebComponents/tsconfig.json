@@ -5,7 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "./types",
+    "outDir": "./Client/types",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

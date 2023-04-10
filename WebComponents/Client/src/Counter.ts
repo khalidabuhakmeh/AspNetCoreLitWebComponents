@@ -1,30 +1,22 @@
-import {html, css, LitElement} from 'lit';
+import {html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {BaseElement} from "./BaseElement";
 @customElement("my-counter")
-export class Counter extends LitElement {
-    static get styles() {
-        return css`
-            button { font-size: 3em }
-        `;
-    }
+export class Counter extends BaseElement {
     constructor() {
         super();
         this.count = 0;
-        this.display = "Click Me";
     }
     @property()
     count = 0;
-    @property()
-    display;
     increment() {
         this.count++;
-        this.display = `Current Count: ${this.count}`;
     }
     render() {
         return html`
-            <button @click=${this.increment}>
-                ${this.display}
-            </button>
+            <h2>Counter</h2>
+            <p role="status">Current count: ${this.count}</p>
+            <button class="btn btn-primary" @click="${this.increment}">Click me</button>
         `
     }
 }

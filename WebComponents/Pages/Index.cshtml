@@ -7,8 +7,15 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    
+
     <!-- I'm a lit-powered web component -->
+
+</div>
+
+<div class="mb-5">
     <my-counter></my-counter>
-    
+</div>
+
+<div>
+    <fetch-data url="@Url.Action("Get", "WeatherForecast")"></fetch-data>
 </div>

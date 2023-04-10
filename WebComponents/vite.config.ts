@@ -60,7 +60,8 @@ export default defineConfig(async () => {
 
   // Define Vite configuration
   const config: UserConfig = {
-    appType: 'custom',
+    clearScreen: true,
+    appType: 'mpa',
     root: 'Client',
     publicDir: 'public',
     build: {
@@ -69,7 +70,7 @@ export default defineConfig(async () => {
       outDir: '../wwwroot',
       assetsDir: '',
       rollupOptions: {
-        input: 'Client/main.ts',
+        input: ['Client/main.ts', "Client/css/site.scss" ],
         // remove hashing, but I could add it back in
         output: {
           // Save entry files to the appropriate folder
@@ -106,11 +107,9 @@ export default defineConfig(async () => {
         key: keyFilePath
       },
       hmr: {
+        host: "localhost",
         clientPort: appsettingsDev.Vite.Server.Port
       }
-    },
-    optimizeDeps: {
-      include: ['aspnet-client-validation'],
     }
   }
 

@@ -33,4 +33,8 @@
       <PackageReference Include="Vite.AspNetCore" Version="1.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\main.js" />
+    </ItemGroup>
+
 </Project>

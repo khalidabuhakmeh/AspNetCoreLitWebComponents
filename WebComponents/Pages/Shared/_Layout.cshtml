@@ -7,19 +7,15 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - WebComponents</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/WebComponents.styles.css" asp-append-version="true"/>
-    <script defer src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script defer src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<environment include="Development">
-		<!-- Vite development server script -->
-		<script type="module" src="~/@@vite/client"></script>
-		<script type="module" src="~/main.ts"></script>
-	</environment>
-	<environment include="Production">
-		<script type="module" src="~/@Manifest["main.ts"]!.File" asp-append-version="true"></script>
-	</environment>
+    <environment include="Development">
+        <!-- Vite development server script -->
+        <script type="module" src="~/@@vite/client"></script>
+        <script defer type="module" src="~/main.ts"></script>
+    </environment>
+    <environment include="Production">
+        <link rel="stylesheet" href="~/@Manifest["scss/site.scss"]!.File" asp-append-version="true"/>
+        <script defer type="module" src="~/@Manifest["main.ts"]!.File" asp-append-version="true"></script>
+    </environment>
 </head>
 <body>
 <header>
@@ -54,8 +50,6 @@
         &copy; 2023 - WebComponents - <a asp-area="" asp-page="/Privacy">Privacy</a>
     </div>
 </footer>
-
-
 
 @await RenderSectionAsync("Scripts", required: false)
 </body>

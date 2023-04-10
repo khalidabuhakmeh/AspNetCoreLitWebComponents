@@ -34,15 +34,15 @@ export class FetchData extends BaseElement {
                 </tr>
                 </thead>
                 <tbody>
-                ${this.forecasts.map((forecast) => {
-                    return html`
+                ${this.forecasts.map((forecast) =>
+                    html`
                         <tr>
                             <td>${forecast.date}</td>
                             <td>${forecast.temperatureC}</td>
                             <td>${forecast.temperatureF}</td>
                             <td>${forecast.summary}</td>
                         </tr>`
-                })}
+                )}
                 </tbody>
             </table>
         `

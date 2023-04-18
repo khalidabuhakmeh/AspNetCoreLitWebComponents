@@ -17,7 +17,7 @@ export class RandomImage extends BaseElement {
 
     button() {
         return html`
-            <button @click=${this.random} class="btn btn-primary">
+            <button @click=${this.random} class="btn btn-primary mb-2">
                 Get Random Image
             </button>`
     }

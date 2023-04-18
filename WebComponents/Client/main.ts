@@ -7,4 +7,7 @@ import "jquery-validation-unobtrusive";
 import "./scss/site.scss";
 
 // @ts-ignore - VITE import all Lit components
-const files = import.meta.globEager('./src/**/*')
+const files = import.meta.glob(
+    './src/**/*',
+    { eager: true }
+)
